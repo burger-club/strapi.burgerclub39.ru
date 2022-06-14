@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cities",
+  "info": {
+    "singularName": "city",
+    "pluralName": "cities",
+    "displayName": "City",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "orders": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::order.order",
+      "private": true,
+      "mappedBy": "city"
+    },
+    "phone": {
+      "type": "string",
+      "required": true,
+      "default": "+7 (4012) 525-800"
+    },
+    "telegramChatId": {
+      "type": "string",
+      "required": true,
+      "private": true
+    }
+  }
+}

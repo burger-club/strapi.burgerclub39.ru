@@ -1,0 +1,31 @@
+{
+  "name": "strapi-burger-club-ru",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A Strapi application",
+  "scripts": {
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "@strapi/plugin-documentation": "^4.1.12",
+    "@strapi/plugin-i18n": "4.1.12",
+    "@strapi/plugin-users-permissions": "4.1.12",
+    "@strapi/strapi": "4.1.12",
+    "better-sqlite3": "7.4.6"
+  },
+  "author": {
+    "name": "A Strapi developer"
+  },
+  "strapi": {
+    "uuid": "d88f2db4-a3f5-4460-8b2e-474f755de539"
+  },
+  "engines": {
+    "node": ">=12.x.x <=16.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
+}
