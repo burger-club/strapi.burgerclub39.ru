@@ -31,11 +31,6 @@
       "allowedTypes": [
         "images"
       ]
-    },
-    "hidden": {
-      "type": "boolean",
-      "default": false,
-      "required": true
     }
   }
 }

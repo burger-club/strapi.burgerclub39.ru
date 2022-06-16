@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2022-06-07T16:03:03.033Z"
+    "x-generation-date": "2022-06-16T11:26:32.251Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -914,9 +914,6 @@
                                                               }
                                                             }
                                                           }
-                                                        },
-                                                        "hidden": {
-                                                          "type": "boolean"
                                                         },
                                                         "createdAt": {
                                                           "type": "string",
@@ -1894,9 +1891,6 @@
                                                           }
                                                         }
                                                       },
-                                                      "hidden": {
-                                                        "type": "boolean"
-                                                      },
                                                       "createdAt": {
                                                         "type": "string",
                                                         "format": "date-time"
@@ -2606,9 +2600,6 @@
                                                                           }
                                                                         }
                                                                       }
-                                                                    },
-                                                                    "hidden": {
-                                                                      "type": "boolean"
                                                                     },
                                                                     "createdAt": {
                                                                       "type": "string",
@@ -3617,9 +3608,6 @@
                                                                       }
                                                                     }
                                                                   },
-                                                                  "hidden": {
-                                                                    "type": "boolean"
-                                                                  },
                                                                   "createdAt": {
                                                                     "type": "string",
                                                                     "format": "date-time"
@@ -4147,8 +4135,7 @@
               "name",
               "description",
               "price",
-              "image",
-              "hidden"
+              "image"
             ],
             "type": "object",
             "properties": {
@@ -4171,9 +4158,6 @@
                   }
                 ],
                 "example": "string or id"
-              },
-              "hidden": {
-                "type": "boolean"
               }
             }
           }
@@ -4570,9 +4554,6 @@
                           }
                         }
                       }
-                    },
-                    "hidden": {
-                      "type": "boolean"
                     },
                     "createdAt": {
                       "type": "string",
@@ -5290,9 +5271,6 @@
                         }
                       }
                     }
-                  },
-                  "hidden": {
-                    "type": "boolean"
                   },
                   "createdAt": {
                     "type": "string",
