@@ -1,6 +1,6 @@
 FROM node:16-alpine3.14
 
-WORKDIR /my-path
+WORKDIR /app
 
 COPY ["./package.json", "./yarn.lock", "./"]
 
