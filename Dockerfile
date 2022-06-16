@@ -1,4 +1,4 @@
-FROM strapi/base
+FROM node:16-alpine3.14
 
 WORKDIR /my-path
 
