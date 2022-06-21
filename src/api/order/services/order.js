@@ -6,21 +6,29 @@
 
 const {createCoreService} = require('@strapi/strapi').factories;
 const axios = require('axios')
-const telegramAPI = axios.create({
-  baseURL: 'https://api.telegram.org/bot5394792237:AAHBA8O6wYP7rDw6xPiJxyvNx9obH9BCRK8'
-})
-
-const notifyTelegram = (text) => {
-  return telegramAPI.post('/sendMessage', {
-    chat_id: "-1001660106652",
-    text
-  })
-}
 
 module.exports = createCoreService('api::order.order', () => ({
+  telegramAPI: axios.create({
+    baseURL: 'https://api.telegram.org/bot' + process.env.TELEGRAM_TOKEN
+  }),
+
   async create(params) {
-    const result = await super.create({ ...params, populate: ['items', 'items.product'] });
-    await notifyTelegram('HUI')
+    const result = await super.create({ ...params, populate: ['city', 'items', 'items.product'] });
+
+    await this.telegramAPI.post('/sendMessage', {
+      chat_id: result.city.telegramChatId,
+      parse_mode: 'markdown',
+      text: `💡 *${result.city.name}* | Новый заказ!
+
+*Имя:* ${result.name}
+*Номер телефона:* ${result.phone}
+*Адрес:* ${result.address}
+
+*Список товаров:*\n${result.items.map((item, i) => `${i + 1}. *${item.product.name}* x *${item.amount}* (${item.product.price * item.amount} ₽)`).join('\n')}
+
+Итого: *${result.items.reduce((acc, item) => acc + item.product.price * item.amount, 0)} ₽*`
+    })
+
     return result;
   }
 }));
